@@ -1,0 +1,25 @@
+<div class="table-responsive">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				{% for cell in include.data[0] %}
+					<th scope="col">{{ cell[0] }}</th>
+				{% endfor %}
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in include.data %}
+				<tr>
+					{% for cell in row %}
+						{% if forloop.first %}
+							{% capture defaultcell %}<i class="fas fa-question fa-fw"></i>{% endcapture %}
+							<th scope="row">{{ cell[1] | default: defaultcell }}</th>
+						{% else %}
+							<th>{{ cell[1] }}</th>
+						{% endif %}
+					{% endfor %}
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,32 @@
+/** Epidocs / Past-Exams CSS */
+
+body {
+	background: #f8f9fa; /* bg-light */
+}
+
+h1, h2 {
+	margin-bottom: 1rem;
+	padding-bottom: .5rem;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+img {
+	max-width: 100%;
+}
+
+body > .breadcrumb {
+	margin-bottom: 0;
+}
+.breadcrumb li {
+	display: table-cell;
+}
+
+#main {
+	background: #fff;
+    padding: 1rem 0;
+}
+
+footer {
+    padding: 1rem 0;
+    border-top: 2px solid rgba(0, 0, 0, .1);
+}

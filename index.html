@@ -1,0 +1,29 @@
+---
+layout: default
+title: Algostats
+breadcrumb:
+- Home
+---
+
+<h1>{{ page.title }}</h1>
+
+<div class="alert alert-info">
+	<h4 class="alert-heading">This is a BETA project!</h4>
+	<p class="mb-0">Help by contributing to <a href="{{ site.github.repository_url }}">the open-source repository</a>! <i class="fas fa-heart fa-fw text-danger"></i></p>
+</div>
+
+<p>Stats of algorithm homework at EPITA.</p>
+
+<p><i class="fas fa-info fa-fw"></i> Overall stats are calculated on overalls of all homework done by a promotion.</p>
+
+{% include table.html data = site.data.overall %}
+
+<h2>Stats on specific homework</h2>
+
+<ul>
+	{% for list in site.data %}
+		{% unless list[0] == "overall" %}
+			<li><a href="{{ list[0] | relative_url }}">{{ list[0] | replace: '_', ' ' | capitalize }}</a></li>
+		{% endunless %}
+	{% endfor %}
+</ul>
