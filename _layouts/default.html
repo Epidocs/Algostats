@@ -43,6 +43,7 @@
 				<div class="navbar-nav">
 					{% assign current = page.url | downcase | split: '/' %}
 					<a class="nav-item nav-link {% if current[1] == '' %}active{% endif %}" href="{{ '' | relative_url }}">Home</a>
+					<a class="nav-item nav-link {% if current[1] == 'legal' %}active{% endif %}" href="{{ 'legal' | relative_url }}">Legal</a>
 					<a class="nav-item nav-link {% if current[1] == 'about' %}active{% endif %}" href="{{ 'about' | relative_url }}">About</a>
 				</div>
 			</div>
