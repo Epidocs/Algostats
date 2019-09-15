@@ -1,8 +1,8 @@
 ---
 layout: default
-title: About
+title: Legal
 breadcrumb:
-- About
+- Legal
 ---
 
 # Legal
