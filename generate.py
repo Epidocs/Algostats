@@ -1,5 +1,6 @@
 import os
 import csv
+import json
 from statistics import mean, median
 
 walkpath = "_data/"
@@ -78,9 +79,17 @@ for promo in sorted(odata):
 
 print(stats)
 
-for homework in stats:
+hwlist = []
+for homework in sorted(stats):
+	if homework:
+		hwlist.append(homework)
+	
 	npath = os.path.join(walkpath, homework, 'overall.csv')
 	with open(npath, 'w', newline='') as file:
 		wr = csv.writer(file)
 		for row in stats[homework]:
 			wr.writerow(row)
+
+hpath = os.path.join(walkpath, 'homeworklist.json')
+with open(hpath, 'w', newline='') as file:
+	json.dump(hwlist, file)
