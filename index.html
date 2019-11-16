@@ -21,7 +21,7 @@ breadcrumb:
 <h2>Stats on specific homework</h2>
 
 <ul>
-	{% for list in site.data %}
+	{% for list in site.data | sort %}
 		{% unless list[0] == "overall" %}
 			<li><a href="{{ list[0] | relative_url }}">{{ list[0] | replace: '_', ' ' | capitalize }}</a></li>
 		{% endunless %}
