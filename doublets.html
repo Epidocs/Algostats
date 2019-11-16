@@ -23,17 +23,4 @@ I am <fullname or login> and I'd like all my grades — my data — to be de-ano
 
 <p>The grades are anonymized by default. If you want your data de-anonymized, <a href="mailto:mathieu.guerin@epita.fr?subject={{ subject | url_encode }}&body={{ message | url_encode }}">send a mail to us</a> from your @epita.fr email.</p>
 
-{% for data in site.data.doublets %}
-	{% unless data[0] == "overall" %}
-		<h2>
-			{{ data[0] | replace: 's', '#' }} &nbsp;
-			<button class="btn btn-info btn-sm" type="button" data-toggle="collapse" data-target="#collapse_{{ data[0] }}">
-				<i class="fas fa-arrow-down fa-fw"></i> Open or close details
-			</button>
-		</h2>
-		<div class="collapse" id="collapse_{{ data[0] }}">
-			{% assign subdata = data[1] %}
-			{% include table.html data = subdata %}
-		</div>
-	{% endunless %}
-{% endfor %}
+{% include grades.html data = site.data.doublets %}
