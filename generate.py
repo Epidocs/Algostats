@@ -64,7 +64,7 @@ for root, dirs, files in os.walk(walkpath):
 
 stats[""] = [["Promotion", "Number of Homework", "Average Count", "Global Average", "Average Median", "Average Minimum", "Average Maximum"]]
 
-for promo in odata:
+for promo in sorted(odata):
 	final = odata[promo]
 	
 	count = len(final[0])
