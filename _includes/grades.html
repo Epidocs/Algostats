@@ -1,4 +1,4 @@
-{% for data in include.data %}
+{% for data in include.data | sort %}
 	{% unless data[0] == "overall" %}
 		<h2>
 			{{ data[0] | replace: 's', '#' }} &nbsp;
